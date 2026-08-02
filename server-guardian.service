@@ -1,0 +1,27 @@
+[Unit]
+Description=Server Guardian
+Documentation=https://github.com/MrBest2525/server-guardian
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+
+User=root
+Group=root
+
+WorkingDirectory=/opt/server-guardian
+ExecStart=/usr/bin/python3 /opt/server-guardian/server_guardian.py
+
+Restart=on-failure
+RestartSec=10
+
+Environment=PYTHONUNBUFFERED=1
+
+Restart=on-failure
+RestartSec=10
+
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target

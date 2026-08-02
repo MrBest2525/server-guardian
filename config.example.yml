@@ -1,0 +1,11 @@
+# Server Guardian Configuration
+
+targets:
+  - name: home-manager-server
+    ip: 192.168.1.100
+    mac: FC:61:98:5E:73:E7
+
+  # 追加する場合
+  # - name: home-server-01
+  #   ip: 192.168.1.101
+  #   mac: AA:BB:CC:DD:EE:FF
