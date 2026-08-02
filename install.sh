@@ -17,7 +17,10 @@ fi
 
 # 必要パッケージ
 apt update
-apt install -y python3 python3-pip wakeonlan
+apt install -y \
+    python3 \
+    python3-yaml \
+    wakeonlan
 
 # Pythonライブラリ
 pip3 install -r requirements.txt
