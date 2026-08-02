@@ -22,12 +22,9 @@ apt install -y \
     python3-yaml \
     wakeonlan
 
-# Pythonライブラリ
-pip3 install -r requirements.txt
-
 # 配置
 mkdir -p "$INSTALL_DIR"
-cp server_guardian.py "$INSTALL_DIR"
+install -Dm644 server_guardian.py "$INSTALL_DIR/server_guardian.py"
 
 # 設定
 mkdir -p "$CONFIG_DIR"
@@ -40,7 +37,8 @@ else
 fi
 
 # systemd
-cp server-guardian.service /etc/systemd/system/
+install -Dm644 server-guardian.service \
+    /etc/systemd/system/server-guardian.service
 
 systemctl daemon-reload
 systemctl enable server-guardian
